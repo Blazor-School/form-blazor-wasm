@@ -1,0 +1,17 @@
+﻿@page "/compare"
+@using FormBlazorWasm.Models
+
+<div>Name: @Person.Name</div>
+<div>EditForm:</div>
+<EditForm Model="Person">
+    <InputText @bind-Value="Person.Name"></InputText>
+</EditForm>
+
+<div>HTML form:</div>
+<form>
+    <input type="text" @bind="Person.Name"/>
+</form>
+
+@code {
+    public Person Person { get; set; } = new();
+}
